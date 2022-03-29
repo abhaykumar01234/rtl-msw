@@ -1,7 +1,7 @@
 import React from "react";
 import TestHook from "../TestHook";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import App from "../../App";
+import TestHookParent from "../TestHookParent";
 
 afterEach(cleanup);
 
@@ -17,9 +17,9 @@ it("Text in state is changed when button clicked", () => {
 
 it("button click changes props", () => {
   const { getByText } = render(
-    <App>
+    <TestHookParent>
       <TestHook />
-    </App>
+    </TestHookParent>
   );
 
   expect(getByText(/Joe/i).textContent).toBe("Joe");

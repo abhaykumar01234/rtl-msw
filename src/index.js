@@ -1,5 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { FlashProvider } from "./contexts/flashMessage";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <FlashProvider>
+    <App />
+  </FlashProvider>,
+  document.getElementById("root")
+);

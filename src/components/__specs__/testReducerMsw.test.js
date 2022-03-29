@@ -1,5 +1,5 @@
 import React from "react";
-import TestAxios from "../TestAxios";
+import TestReducer from "../TestReducer";
 import {
   screen,
   render,
@@ -10,7 +10,7 @@ const url = "https://jsonplaceholder.typicode.com/posts/1";
 
 describe("after application fully loads", () => {
   beforeEach(async () => {
-    render(<TestAxios url={url} />);
+    render(<TestReducer url={url} />);
     await waitForElementToBeRemoved(() => screen.getByText("...Loading"));
   });
   it("Async axios request works", async () => {
