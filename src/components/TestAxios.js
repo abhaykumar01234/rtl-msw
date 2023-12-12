@@ -11,7 +11,17 @@ const TestAxios = ({ url }) => {
   return (
     <div>
       <h1> Axios Test </h1>
-      {state ? <p data-testid="title">{state.title}</p> : <p>...Loading</p>}
+      {state ? (
+        <>
+          <h3>Post</h3>
+          <p data-testid="post-id">Post ID : {state.id}</p>
+          <p data-testid="title">TITLE : {state.title}</p>
+          <p data-testid="user-id">USER ID : {state.userId}</p>
+          <p data-testid="post-body">BODY : {state.body}</p>
+        </>
+      ) : (
+        <p>...Loading</p>
+      )}
     </div>
   );
 };
